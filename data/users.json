@@ -3,7 +3,8 @@
     "id": 1,
     "username": "test",
     "password": "Test",
-    "collection": []
+    "collection": [],
+    "token": "JJJ4K4KVED"
   },
   {
     "id": 2,
