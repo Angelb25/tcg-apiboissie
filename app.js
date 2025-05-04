@@ -2,9 +2,10 @@ const express = require("express");
 const app = express();
 const users = require("./modules/users");
 const fs = require("fs");
+const cards = require("./modules/cards");
 
 app.use(express.urlencoded({ extended: true }));
-app.use(express.json()); // 👈 nécessaire pour lire le JSON
+app.use(express.json()); 
 
 app.get("/", (req, res) => {
   res.json({
@@ -12,6 +13,7 @@ app.get("/", (req, res) => {
     data: {}
   });
 });
+app.get("/cards", cards.GetAllCards);
 
 app.post("/register", users.RegisterUser);
 app.post("/login", users.Login);
