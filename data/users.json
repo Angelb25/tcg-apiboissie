@@ -3,13 +3,915 @@
     "id": 1,
     "username": "test",
     "password": "Test",
-    "collection": [],
-    "token": "JJJ4K4KVED"
+    "collection": [
+      {
+        "id": 1,
+        "name": "Bulbizarre",
+        "rarity": "common"
+      },
+      {
+        "id": 25,
+        "name": "Pikachu",
+        "rarity": "rare"
+      },
+      {
+        "id": 10,
+        "name": "Dracofeu",
+        "rarity": "legendary"
+      },
+      {
+        "id": 150,
+        "name": "Mewtwo",
+        "rarity": "legendary"
+      },
+      {
+        "id": 150,
+        "name": "Mewtwo",
+        "rarity": "legendary"
+      },
+      {
+        "id": 7,
+        "name": "Carapuce",
+        "rarity": "common"
+      },
+      {
+        "id": 1,
+        "name": "Bulbizarre",
+        "rarity": "common"
+      },
+      {
+        "id": 150,
+        "name": "Mewtwo",
+        "rarity": "legendary"
+      },
+      {
+        "id": 25,
+        "name": "Pikachu",
+        "rarity": "rare"
+      },
+      {
+        "id": 25,
+        "name": "Pikachu",
+        "rarity": "rare"
+      },
+      {
+        "id": 1,
+        "name": "Bulbizarre",
+        "rarity": "common"
+      },
+      {
+        "id": 1,
+        "name": "Bulbizarre",
+        "rarity": "common"
+      },
+      {
+        "id": 1,
+        "name": "Bulbizarre",
+        "rarity": "common"
+      },
+      {
+        "id": 150,
+        "name": "Mewtwo",
+        "rarity": "legendary"
+      },
+      {
+        "id": 25,
+        "name": "Pikachu",
+        "rarity": "rare"
+      },
+      {
+        "id": 4,
+        "name": "Salamèche",
+        "rarity": "common"
+      },
+      {
+        "id": 10,
+        "name": "Dracofeu",
+        "rarity": "legendary"
+      },
+      {
+        "id": 10,
+        "name": "Dracofeu",
+        "rarity": "legendary"
+      },
+      {
+        "id": 7,
+        "name": "Carapuce",
+        "rarity": "common"
+      },
+      {
+        "id": 1,
+        "name": "Bulbizarre",
+        "rarity": "common"
+      },
+      {
+        "id": 150,
+        "name": "Mewtwo",
+        "rarity": "legendary"
+      },
+      {
+        "id": 150,
+        "name": "Mewtwo",
+        "rarity": "legendary"
+      },
+      {
+        "id": 4,
+        "name": "Salamèche",
+        "rarity": "common"
+      },
+      {
+        "id": 150,
+        "name": "Mewtwo",
+        "rarity": "legendary"
+      },
+      {
+        "id": 1,
+        "name": "Bulbizarre",
+        "rarity": "common"
+      },
+      {
+        "id": 25,
+        "name": "Pikachu",
+        "rarity": "rare"
+      },
+      {
+        "id": 4,
+        "name": "Salamèche",
+        "rarity": "common"
+      },
+      {
+        "id": 25,
+        "name": "Pikachu",
+        "rarity": "rare"
+      },
+      {
+        "id": 10,
+        "name": "Dracofeu",
+        "rarity": "legendary"
+      },
+      {
+        "id": 10,
+        "name": "Dracofeu",
+        "rarity": "legendary"
+      },
+      {
+        "id": 1,
+        "name": "Bulbizarre",
+        "rarity": "common"
+      },
+      {
+        "id": 4,
+        "name": "Salamèche",
+        "rarity": "common"
+      },
+      {
+        "id": 150,
+        "name": "Mewtwo",
+        "rarity": "legendary"
+      },
+      {
+        "id": 25,
+        "name": "Pikachu",
+        "rarity": "rare"
+      },
+      {
+        "id": 25,
+        "name": "Pikachu",
+        "rarity": "rare"
+      },
+      {
+        "id": 1,
+        "name": "Bulbizarre",
+        "rarity": "common"
+      },
+      {
+        "id": 4,
+        "name": "Salamèche",
+        "rarity": "common"
+      },
+      {
+        "id": 4,
+        "name": "Salamèche",
+        "rarity": "common"
+      },
+      {
+        "id": 150,
+        "name": "Mewtwo",
+        "rarity": "legendary"
+      },
+      {
+        "id": 1,
+        "name": "Bulbizarre",
+        "rarity": "common"
+      },
+      {
+        "id": 4,
+        "name": "Salamèche",
+        "rarity": "common"
+      },
+      {
+        "id": 10,
+        "name": "Dracofeu",
+        "rarity": "legendary"
+      },
+      {
+        "id": 10,
+        "name": "Dracofeu",
+        "rarity": "legendary"
+      },
+      {
+        "id": 10,
+        "name": "Dracofeu",
+        "rarity": "legendary"
+      },
+      {
+        "id": 150,
+        "name": "Mewtwo",
+        "rarity": "legendary"
+      },
+      {
+        "id": 7,
+        "name": "Carapuce",
+        "rarity": "common"
+      },
+      {
+        "id": 10,
+        "name": "Dracofeu",
+        "rarity": "legendary"
+      },
+      {
+        "id": 1,
+        "name": "Bulbizarre",
+        "rarity": "common"
+      },
+      {
+        "id": 25,
+        "name": "Pikachu",
+        "rarity": "rare"
+      },
+      {
+        "id": 7,
+        "name": "Carapuce",
+        "rarity": "common"
+      },
+      {
+        "id": 7,
+        "name": "Carapuce",
+        "rarity": "common"
+      },
+      {
+        "id": 7,
+        "name": "Carapuce",
+        "rarity": "common"
+      },
+      {
+        "id": 10,
+        "name": "Dracofeu",
+        "rarity": "legendary"
+      },
+      {
+        "id": 1,
+        "name": "Bulbizarre",
+        "rarity": "common"
+      },
+      {
+        "id": 10,
+        "name": "Dracofeu",
+        "rarity": "legendary"
+      },
+      {
+        "id": 150,
+        "name": "Mewtwo",
+        "rarity": "legendary"
+      },
+      {
+        "id": 4,
+        "name": "Salamèche",
+        "rarity": "common"
+      },
+      {
+        "id": 1,
+        "name": "Bulbizarre",
+        "rarity": "common"
+      },
+      {
+        "id": 4,
+        "name": "Salamèche",
+        "rarity": "common"
+      },
+      {
+        "id": 1,
+        "name": "Bulbizarre",
+        "rarity": "common"
+      },
+      {
+        "id": 150,
+        "name": "Mewtwo",
+        "rarity": "legendary"
+      },
+      {
+        "id": 1,
+        "name": "Bulbizarre",
+        "rarity": "common"
+      },
+      {
+        "id": 10,
+        "name": "Dracofeu",
+        "rarity": "legendary"
+      },
+      {
+        "id": 25,
+        "name": "Pikachu",
+        "rarity": "rare"
+      },
+      {
+        "id": 4,
+        "name": "Salamèche",
+        "rarity": "common"
+      },
+      {
+        "id": 7,
+        "name": "Carapuce",
+        "rarity": "common"
+      },
+      {
+        "id": 1,
+        "name": "Bulbizarre",
+        "rarity": "common"
+      },
+      {
+        "id": 25,
+        "name": "Pikachu",
+        "rarity": "rare"
+      },
+      {
+        "id": 1,
+        "name": "Bulbizarre",
+        "rarity": "common"
+      },
+      {
+        "id": 1,
+        "name": "Bulbizarre",
+        "rarity": "common"
+      },
+      {
+        "id": 4,
+        "name": "Salamèche",
+        "rarity": "common"
+      },
+      {
+        "id": 25,
+        "name": "Pikachu",
+        "rarity": "rare"
+      },
+      {
+        "id": 25,
+        "name": "Pikachu",
+        "rarity": "rare"
+      },
+      {
+        "id": 25,
+        "name": "Pikachu",
+        "rarity": "rare"
+      },
+      {
+        "id": 150,
+        "name": "Mewtwo",
+        "rarity": "legendary"
+      },
+      {
+        "id": 10,
+        "name": "Dracofeu",
+        "rarity": "legendary"
+      },
+      {
+        "id": 25,
+        "name": "Pikachu",
+        "rarity": "rare"
+      },
+      {
+        "id": 4,
+        "name": "Salamèche",
+        "rarity": "common"
+      },
+      {
+        "id": 25,
+        "name": "Pikachu",
+        "rarity": "rare"
+      },
+      {
+        "id": 10,
+        "name": "Dracofeu",
+        "rarity": "legendary"
+      },
+      {
+        "id": 10,
+        "name": "Dracofeu",
+        "rarity": "legendary"
+      },
+      {
+        "id": 25,
+        "name": "Pikachu",
+        "rarity": "rare"
+      },
+      {
+        "id": 150,
+        "name": "Mewtwo",
+        "rarity": "legendary"
+      },
+      {
+        "id": 1,
+        "name": "Bulbizarre",
+        "rarity": "common"
+      },
+      {
+        "id": 25,
+        "name": "Pikachu",
+        "rarity": "rare"
+      },
+      {
+        "id": 25,
+        "name": "Pikachu",
+        "rarity": "rare"
+      },
+      {
+        "id": 25,
+        "name": "Pikachu",
+        "rarity": "rare"
+      },
+      {
+        "id": 4,
+        "name": "Salamèche",
+        "rarity": "common"
+      },
+      {
+        "id": 25,
+        "name": "Pikachu",
+        "rarity": "rare"
+      },
+      {
+        "id": 25,
+        "name": "Pikachu",
+        "rarity": "rare"
+      },
+      {
+        "id": 7,
+        "name": "Carapuce",
+        "rarity": "common"
+      },
+      {
+        "id": 150,
+        "name": "Mewtwo",
+        "rarity": "legendary"
+      },
+      {
+        "id": 7,
+        "name": "Carapuce",
+        "rarity": "common"
+      },
+      {
+        "id": 1,
+        "name": "Bulbizarre",
+        "rarity": "common"
+      },
+      {
+        "id": 150,
+        "name": "Mewtwo",
+        "rarity": "legendary"
+      },
+      {
+        "id": 7,
+        "name": "Carapuce",
+        "rarity": "common"
+      },
+      {
+        "id": 10,
+        "name": "Dracofeu",
+        "rarity": "legendary"
+      },
+      {
+        "id": 150,
+        "name": "Mewtwo",
+        "rarity": "legendary"
+      },
+      {
+        "id": 4,
+        "name": "Salamèche",
+        "rarity": "common"
+      },
+      {
+        "id": 10,
+        "name": "Dracofeu",
+        "rarity": "legendary"
+      },
+      {
+        "id": 4,
+        "name": "Salamèche",
+        "rarity": "common"
+      },
+      {
+        "id": 10,
+        "name": "Dracofeu",
+        "rarity": "legendary"
+      },
+      {
+        "id": 7,
+        "name": "Carapuce",
+        "rarity": "common"
+      },
+      {
+        "id": 25,
+        "name": "Pikachu",
+        "rarity": "rare"
+      },
+      {
+        "id": 10,
+        "name": "Dracofeu",
+        "rarity": "legendary"
+      },
+      {
+        "id": 25,
+        "name": "Pikachu",
+        "rarity": "rare"
+      },
+      {
+        "id": 7,
+        "name": "Carapuce",
+        "rarity": "common"
+      },
+      {
+        "id": 25,
+        "name": "Pikachu",
+        "rarity": "rare"
+      },
+      {
+        "id": 25,
+        "name": "Pikachu",
+        "rarity": "rare"
+      },
+      {
+        "id": 1,
+        "name": "Bulbizarre",
+        "rarity": "common"
+      },
+      {
+        "id": 1,
+        "name": "Bulbizarre",
+        "rarity": "common"
+      },
+      {
+        "id": 150,
+        "name": "Mewtwo",
+        "rarity": "legendary"
+      },
+      {
+        "id": 25,
+        "name": "Pikachu",
+        "rarity": "rare"
+      },
+      {
+        "id": 150,
+        "name": "Mewtwo",
+        "rarity": "legendary"
+      },
+      {
+        "id": 7,
+        "name": "Carapuce",
+        "rarity": "common"
+      },
+      {
+        "id": 25,
+        "name": "Pikachu",
+        "rarity": "rare"
+      },
+      {
+        "id": 25,
+        "name": "Pikachu",
+        "rarity": "rare"
+      },
+      {
+        "id": 4,
+        "name": "Salamèche",
+        "rarity": "common"
+      },
+      {
+        "id": 1,
+        "name": "Bulbizarre",
+        "rarity": "common"
+      },
+      {
+        "id": 150,
+        "name": "Mewtwo",
+        "rarity": "legendary"
+      },
+      {
+        "id": 15,
+        "name": "Paras",
+        "rarity": "common"
+      },
+      {
+        "id": 31,
+        "name": "Mr. Mime",
+        "rarity": "rare"
+      },
+      {
+        "id": 3,
+        "name": "Bulbasaur",
+        "rarity": "common"
+      },
+      {
+        "id": 31,
+        "name": "Mr. Mime",
+        "rarity": "rare"
+      },
+      {
+        "id": 10,
+        "name": "Geodude",
+        "rarity": "common"
+      },
+      {
+        "id": 37,
+        "name": "Articuno",
+        "rarity": "legendary"
+      },
+      {
+        "id": 29,
+        "name": "Kangaskhan",
+        "rarity": "rare"
+      },
+      {
+        "id": 33,
+        "name": "Onix",
+        "rarity": "rare"
+      },
+      {
+        "id": 29,
+        "name": "Kangaskhan",
+        "rarity": "rare"
+      },
+      {
+        "id": 42,
+        "name": "Raikou",
+        "rarity": "legendary"
+      },
+      {
+        "id": 17,
+        "name": "Poliwag",
+        "rarity": "common"
+      },
+      {
+        "id": 11,
+        "name": "Krabby",
+        "rarity": "common"
+      },
+      {
+        "id": 7,
+        "name": "Charmander",
+        "rarity": "common"
+      },
+      {
+        "id": 26,
+        "name": "Growlithe",
+        "rarity": "rare"
+      },
+      {
+        "id": 4,
+        "name": "Bulbizarre",
+        "rarity": "common"
+      },
+      {
+        "id": 16,
+        "name": "Pidgey",
+        "rarity": "common"
+      },
+      {
+        "id": 14,
+        "name": "Oddish",
+        "rarity": "common"
+      },
+      {
+        "id": 19,
+        "name": "SalamÃ¨che",
+        "rarity": "common"
+      },
+      {
+        "id": 13,
+        "name": "Magnemite",
+        "rarity": "common"
+      },
+      {
+        "id": 43,
+        "name": "Zapdos",
+        "rarity": "legendary"
+      },
+      {
+        "id": 19,
+        "name": "SalamÃ¨che",
+        "rarity": "common"
+      },
+      {
+        "id": 43,
+        "name": "Zapdos",
+        "rarity": "legendary"
+      },
+      {
+        "id": 29,
+        "name": "Kangaskhan",
+        "rarity": "rare"
+      },
+      {
+        "id": 36,
+        "name": "Scyther",
+        "rarity": "rare"
+      },
+      {
+        "id": 38,
+        "name": "Entei",
+        "rarity": "legendary"
+      },
+      {
+        "id": 30,
+        "name": "Lapras",
+        "rarity": "rare"
+      },
+      {
+        "id": 21,
+        "name": "Zubat",
+        "rarity": "common"
+      },
+      {
+        "id": 41,
+        "name": "Moltres",
+        "rarity": "legendary"
+      },
+      {
+        "id": 17,
+        "name": "Poliwag",
+        "rarity": "common"
+      },
+      {
+        "id": 11,
+        "name": "Krabby",
+        "rarity": "common"
+      },
+      {
+        "id": 21,
+        "name": "Zubat",
+        "rarity": "common"
+      },
+      {
+        "id": 36,
+        "name": "Scyther",
+        "rarity": "rare"
+      },
+      {
+        "id": 5,
+        "name": "Carapuce",
+        "rarity": "common"
+      },
+      {
+        "id": 9,
+        "name": "Drowzee",
+        "rarity": "common"
+      },
+      {
+        "id": 41,
+        "name": "Moltres",
+        "rarity": "legendary"
+      },
+      {
+        "id": 3,
+        "name": "Bulbasaur",
+        "rarity": "common"
+      },
+      {
+        "id": 7,
+        "name": "Charmander",
+        "rarity": "common"
+      },
+      {
+        "id": 11,
+        "name": "Krabby",
+        "rarity": "common"
+      },
+      {
+        "id": 26,
+        "name": "Growlithe",
+        "rarity": "rare"
+      },
+      {
+        "id": 1,
+        "name": "Abra",
+        "rarity": "common"
+      },
+      {
+        "id": 36,
+        "name": "Scyther",
+        "rarity": "rare"
+      },
+      {
+        "id": 43,
+        "name": "Zapdos",
+        "rarity": "legendary"
+      },
+      {
+        "id": 13,
+        "name": "Magnemite",
+        "rarity": "common"
+      },
+      {
+        "id": 33,
+        "name": "Onix",
+        "rarity": "rare"
+      },
+      {
+        "id": 40,
+        "name": "Mewtwo",
+        "rarity": "legendary"
+      },
+      {
+        "id": 21,
+        "name": "Zubat",
+        "rarity": "common"
+      },
+      {
+        "id": 17,
+        "name": "Poliwag",
+        "rarity": "common"
+      },
+      {
+        "id": 17,
+        "name": "Poliwag",
+        "rarity": "common"
+      },
+      {
+        "id": 2,
+        "name": "Bellsprout",
+        "rarity": "common"
+      },
+      {
+        "id": 18,
+        "name": "Rattata",
+        "rarity": "common"
+      }
+    ],
+    "token": "RR00CVXYR0"
   },
   {
     "id": 2,
     "username": "toto",
     "password": "azerty",
-    "collection": []
+    "collection": [
+      {
+        "id": 25,
+        "name": "Pikachu",
+        "rarity": "rare"
+      },
+      {
+        "id": 1,
+        "name": "Bulbizarre",
+        "rarity": "common"
+      },
+      {
+        "id": 1,
+        "name": "Bulbizarre",
+        "rarity": "common"
+      },
+      {
+        "id": 7,
+        "name": "Carapuce",
+        "rarity": "common"
+      },
+      {
+        "id": 150,
+        "name": "Mewtwo",
+        "rarity": "legendary"
+      },
+      {
+        "id": 10,
+        "name": "Dracofeu",
+        "rarity": "legendary"
+      },
+      {
+        "id": 25,
+        "name": "Pikachu",
+        "rarity": "rare"
+      },
+      {
+        "id": 1,
+        "name": "Bulbizarre",
+        "rarity": "common"
+      },
+      {
+        "id": 25,
+        "name": "Pikachu",
+        "rarity": "rare"
+      },
+      {
+        "id": 7,
+        "name": "Carapuce",
+        "rarity": "common"
+      }
+    ]
   }
 ]

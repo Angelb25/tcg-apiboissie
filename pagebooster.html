@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ouvre ton Booster !</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #f0f0f0, #dceefc);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+
+    img.logo {
+      width: 200px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      color: #222;
+      margin-bottom: 20px;
+    }
+
+    input {
+      padding: 10px;
+      width: 300px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #1e90ff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #0d72cc;
+    }
+
+    #message {
+      margin-top: 15px;
+      font-weight: bold;
+      color: #444;
+    }
+
+    #booster-cards {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 15px;
+      width: 140px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .card p {
+      margin: 5px 0 0;
+      font-size: 14px;
+      color: #666;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pokémon_logo.svg/320px-International_Pokémon_logo.svg.png" alt="Logo Pokémon" class="logo">
+
+  <h1>Ouvre ton Booster !</h1>
+
+  <input type="text" id="token" placeholder="Entre ton token ici..." />
+  <br />
+  <button onclick="openBooster()">Ouvrir un booster</button>
+
+  <div id="message"></div>
+  <div id="booster-cards"></div>
+
+  <script>
+    async function openBooster() {
+      const token = document.getElementById("token").value.trim();
+      const messageDiv = document.getElementById("message");
+      const container = document.getElementById("booster-cards");
+
+      container.innerHTML = "";
+      messageDiv.textContent = "";
+
+      if (!token) {
+        messageDiv.textContent = "⚠️ Merci de renseigner ton token.";
+        return;
+      }
+
+      try {
+        const response = await fetch("http://localhost:3000/booster", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ token })
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+          messageDiv.textContent = "✅ Booster ouvert avec succès !";
+          result.data.forEach(card => {
+            const cardDiv = document.createElement("div");
+            cardDiv.className = "card";
+            cardDiv.innerHTML = `
+              <h3>${card.name}</h3>
+              <p>Rareté : <strong>${card.rarity}</strong></p>
+            `;
+            container.appendChild(cardDiv);
+          });
+        } else {
+          messageDiv.textContent = "❌ " + result.message;
+        }
+
+      } catch (error) {
+        messageDiv.textContent = "Erreur de connexion avec le serveur.";
+      }
+    }
+  </script>
+
+</body>
+</html>
