@@ -853,9 +853,59 @@
         "id": 18,
         "name": "Rattata",
         "rarity": "common"
+      },
+      {
+        "id": 7,
+        "name": "Charmander",
+        "rarity": "common"
+      },
+      {
+        "id": 39,
+        "name": "Mew",
+        "rarity": "legendary"
+      },
+      {
+        "id": 9,
+        "name": "Drowzee",
+        "rarity": "common"
+      },
+      {
+        "id": 33,
+        "name": "Onix",
+        "rarity": "rare"
+      },
+      {
+        "id": 2,
+        "name": "Bellsprout",
+        "rarity": "common"
+      },
+      {
+        "id": 6,
+        "name": "Caterpie",
+        "rarity": "common"
+      },
+      {
+        "id": 30,
+        "name": "Lapras",
+        "rarity": "rare"
+      },
+      {
+        "id": 36,
+        "name": "Scyther",
+        "rarity": "rare"
+      },
+      {
+        "id": 7,
+        "name": "Charmander",
+        "rarity": "common"
+      },
+      {
+        "id": 23,
+        "name": "Eevee",
+        "rarity": "rare"
       }
     ],
-    "token": "RR00CVXYR0"
+    "token": "YBS399FCKH"
   },
   {
     "id": 2,

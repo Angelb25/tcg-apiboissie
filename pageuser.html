@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Connexion Pokémon</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #fceabb, #f8b500);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+
+    .logo {
+      width: 220px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin: 10px 0;
+    }
+
+    input {
+      padding: 10px;
+      width: 280px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #ff0000;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #c20000;
+    }
+
+    #response {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pokémon_logo.svg/320px-International_Pokémon_logo.svg.png" class="logo" alt="Logo Pokémon">
+
+  <h1>🔐 Connexion à ton compte</h1>
+
+  <div class="form-group">
+    <input type="text" id="username" placeholder="Nom d'utilisateur" />
+  </div>
+  <div class="form-group">
+    <input type="password" id="password" placeholder="Mot de passe" />
+  </div>
+
+  <button onclick="login()">Se connecter</button>
+
+  <div id="response"></div>
+
+  <script>
+    async function login() {
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const responseDiv = document.getElementById("response");
+
+      responseDiv.innerHTML = "";
+
+      if (!username || !password) {
+        responseDiv.textContent = "⚠️ Veuillez remplir tous les champs.";
+        return;
+      }
+
+      try {
+        const res = await fetch("http://localhost:3000/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ username, password })
+        });
+
+        const result = await res.json();
+
+        if (res.ok) {
+          // Stocker le token localement
+          localStorage.setItem("token", result.data.token);
+          // Redirection vers booster.html
+          window.location.href = "pagebooster.html";
+        } else {
+          responseDiv.textContent = "❌ " + result.message;
+        }
+
+      } catch (error) {
+        responseDiv.textContent = "Erreur de connexion au serveur.";
+      }
+    }
+  </script>
+
+</body>
+</html>
