@@ -903,9 +903,184 @@
         "id": 23,
         "name": "Eevee",
         "rarity": "rare"
+      },
+      {
+        "id": 36,
+        "name": "Scyther",
+        "rarity": "rare"
+      },
+      {
+        "id": 27,
+        "name": "Hitmonlee",
+        "rarity": "rare"
+      },
+      {
+        "id": 34,
+        "name": "Pikachu",
+        "rarity": "rare"
+      },
+      {
+        "id": 8,
+        "name": "Diglett",
+        "rarity": "common"
+      },
+      {
+        "id": 13,
+        "name": "Magnemite",
+        "rarity": "common"
+      },
+      {
+        "id": 27,
+        "name": "Hitmonlee",
+        "rarity": "rare"
+      },
+      {
+        "id": 6,
+        "name": "Caterpie",
+        "rarity": "common"
+      },
+      {
+        "id": 22,
+        "name": "Dratini",
+        "rarity": "rare"
+      },
+      {
+        "id": 32,
+        "name": "Ninetales",
+        "rarity": "rare"
+      },
+      {
+        "id": 43,
+        "name": "Zapdos",
+        "rarity": "legendary"
+      },
+      {
+        "id": 5,
+        "name": "Carapuce",
+        "rarity": "common"
+      },
+      {
+        "id": 11,
+        "name": "Krabby",
+        "rarity": "common"
+      },
+      {
+        "id": 33,
+        "name": "Onix",
+        "rarity": "rare"
+      },
+      {
+        "id": 24,
+        "name": "Farfetch'd",
+        "rarity": "rare"
+      },
+      {
+        "id": 34,
+        "name": "Pikachu",
+        "rarity": "rare"
+      },
+      {
+        "id": 33,
+        "name": "Onix",
+        "rarity": "rare"
+      },
+      {
+        "id": 29,
+        "name": "Kangaskhan",
+        "rarity": "rare"
+      },
+      {
+        "id": 23,
+        "name": "Eevee",
+        "rarity": "rare"
+      },
+      {
+        "id": 23,
+        "name": "Eevee",
+        "rarity": "rare"
+      },
+      {
+        "id": 13,
+        "name": "Magnemite",
+        "rarity": "common"
+      },
+      {
+        "id": 8,
+        "name": "Diglett",
+        "rarity": "common"
+      },
+      {
+        "id": 10,
+        "name": "Geodude",
+        "rarity": "common"
+      },
+      {
+        "id": 10,
+        "name": "Geodude",
+        "rarity": "common"
+      },
+      {
+        "id": 8,
+        "name": "Diglett",
+        "rarity": "common"
+      },
+      {
+        "id": 20,
+        "name": "Squirtle",
+        "rarity": "common"
+      },
+      {
+        "id": 20,
+        "name": "Squirtle",
+        "rarity": "common"
+      },
+      {
+        "id": 43,
+        "name": "Zapdos",
+        "rarity": "legendary"
+      },
+      {
+        "id": 30,
+        "name": "Lapras",
+        "rarity": "rare"
+      },
+      {
+        "id": 4,
+        "name": "Bulbizarre",
+        "rarity": "common"
+      },
+      {
+        "id": 19,
+        "name": "SalamÃ¨che",
+        "rarity": "common"
+      },
+      {
+        "id": 23,
+        "name": "Eevee",
+        "rarity": "rare"
+      },
+      {
+        "id": 3,
+        "name": "Bulbasaur",
+        "rarity": "common"
+      },
+      {
+        "id": 32,
+        "name": "Ninetales",
+        "rarity": "rare"
+      },
+      {
+        "id": 28,
+        "name": "Jigglypuff",
+        "rarity": "rare"
+      },
+      {
+        "id": 14,
+        "name": "Oddish",
+        "rarity": "common"
       }
     ],
-    "token": "YBS399FCKH"
+    "token": "1M1GUTM50O"
   },
   {
     "id": 2,
@@ -960,6 +1135,256 @@
       {
         "id": 7,
         "name": "Carapuce",
+        "rarity": "common"
+      },
+      {
+        "id": 28,
+        "name": "Jigglypuff",
+        "rarity": "rare"
+      },
+      {
+        "id": 35,
+        "name": "Rapidash",
+        "rarity": "rare"
+      },
+      {
+        "id": 37,
+        "name": "Articuno",
+        "rarity": "legendary"
+      },
+      {
+        "id": 17,
+        "name": "Poliwag",
+        "rarity": "common"
+      },
+      {
+        "id": 37,
+        "name": "Articuno",
+        "rarity": "legendary"
+      },
+      {
+        "id": 28,
+        "name": "Jigglypuff",
+        "rarity": "rare"
+      },
+      {
+        "id": 3,
+        "name": "Bulbasaur",
+        "rarity": "common"
+      },
+      {
+        "id": 6,
+        "name": "Caterpie",
+        "rarity": "common"
+      },
+      {
+        "id": 41,
+        "name": "Moltres",
+        "rarity": "legendary"
+      },
+      {
+        "id": 16,
+        "name": "Pidgey",
+        "rarity": "common"
+      },
+      {
+        "id": 42,
+        "name": "Raikou",
+        "rarity": "legendary"
+      },
+      {
+        "id": 41,
+        "name": "Moltres",
+        "rarity": "legendary"
+      },
+      {
+        "id": 42,
+        "name": "Raikou",
+        "rarity": "legendary"
+      },
+      {
+        "id": 24,
+        "name": "Farfetch'd",
+        "rarity": "rare"
+      },
+      {
+        "id": 22,
+        "name": "Dratini",
+        "rarity": "rare"
+      },
+      {
+        "id": 41,
+        "name": "Moltres",
+        "rarity": "legendary"
+      },
+      {
+        "id": 21,
+        "name": "Zubat",
+        "rarity": "common"
+      },
+      {
+        "id": 26,
+        "name": "Growlithe",
+        "rarity": "rare"
+      },
+      {
+        "id": 25,
+        "name": "Gengar",
+        "rarity": "rare"
+      },
+      {
+        "id": 32,
+        "name": "Ninetales",
+        "rarity": "rare"
+      },
+      {
+        "id": 20,
+        "name": "Squirtle",
+        "rarity": "common"
+      },
+      {
+        "id": 25,
+        "name": "Gengar",
+        "rarity": "rare"
+      },
+      {
+        "id": 39,
+        "name": "Mew",
+        "rarity": "legendary"
+      },
+      {
+        "id": 28,
+        "name": "Jigglypuff",
+        "rarity": "rare"
+      },
+      {
+        "id": 37,
+        "name": "Articuno",
+        "rarity": "legendary"
+      },
+      {
+        "id": 20,
+        "name": "Squirtle",
+        "rarity": "common"
+      },
+      {
+        "id": 25,
+        "name": "Gengar",
+        "rarity": "rare"
+      },
+      {
+        "id": 5,
+        "name": "Carapuce",
+        "rarity": "common"
+      },
+      {
+        "id": 7,
+        "name": "Charmander",
+        "rarity": "common"
+      },
+      {
+        "id": 29,
+        "name": "Kangaskhan",
+        "rarity": "rare"
+      },
+      {
+        "id": 17,
+        "name": "Poliwag",
+        "rarity": "common"
+      },
+      {
+        "id": 31,
+        "name": "Mr. Mime",
+        "rarity": "rare"
+      },
+      {
+        "id": 27,
+        "name": "Hitmonlee",
+        "rarity": "rare"
+      },
+      {
+        "id": 39,
+        "name": "Mew",
+        "rarity": "legendary"
+      },
+      {
+        "id": 4,
+        "name": "Bulbizarre",
+        "rarity": "common"
+      },
+      {
+        "id": 1,
+        "name": "Abra",
+        "rarity": "common"
+      },
+      {
+        "id": 23,
+        "name": "Eevee",
+        "rarity": "rare"
+      },
+      {
+        "id": 9,
+        "name": "Drowzee",
+        "rarity": "common"
+      },
+      {
+        "id": 15,
+        "name": "Paras",
+        "rarity": "common"
+      },
+      {
+        "id": 42,
+        "name": "Raikou",
+        "rarity": "legendary"
+      },
+      {
+        "id": 23,
+        "name": "Eevee",
+        "rarity": "rare"
+      },
+      {
+        "id": 17,
+        "name": "Poliwag",
+        "rarity": "common"
+      },
+      {
+        "id": 36,
+        "name": "Scyther",
+        "rarity": "rare"
+      },
+      {
+        "id": 2,
+        "name": "Bellsprout",
+        "rarity": "common"
+      },
+      {
+        "id": 11,
+        "name": "Krabby",
+        "rarity": "common"
+      },
+      {
+        "id": 12,
+        "name": "Machop",
+        "rarity": "common"
+      },
+      {
+        "id": 40,
+        "name": "Mewtwo",
+        "rarity": "legendary"
+      },
+      {
+        "id": 22,
+        "name": "Dratini",
+        "rarity": "rare"
+      },
+      {
+        "id": 35,
+        "name": "Rapidash",
+        "rarity": "rare"
+      },
+      {
+        "id": 2,
+        "name": "Bellsprout",
         "rarity": "common"
       }
     ]
