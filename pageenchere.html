@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Liste des Enchères</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .enchere {
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+    input[type="number"] {
+      width: 80px;
+    }
+    button {
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Enchères en cours</h1>
+  <div id="enchereContainer"></div>
+
+  <script>
+    const token = localStorage.getItem('token') || prompt("Entrez votre token utilisateur :");
+
+    // Charger les enchères
+    async function chargerEncheres() {
+      const res = await fetch("http://localhost:3000/encheres");
+      const json = await res.json();
+      afficherEncheres(json.data);
+    }
+
+    // Afficher les enchères
+    function afficherEncheres(encheres) {
+      const container = document.getElementById("enchereContainer");
+      container.innerHTML = "";
+
+      if (!encheres.length) {
+        container.innerHTML = "<p>Aucune enchère pour le moment.</p>";
+        return;
+      }
+
+      encheres.forEach(e => {
+        const enchereDiv = document.createElement("div");
+        enchereDiv.classList.add("enchere");
+
+        enchereDiv.innerHTML = `
+          <p><strong>ID Enchère :</strong> ${e.id}</p>
+          <p><strong>Carte :</strong> ${e.card_id}</p>
+          <p><strong>Vendeur :</strong> ${e.seller_id}</p>
+          <p><strong>Fin :</strong> ${new Date(e.end_date).toLocaleString()}</p>
+          <p><strong>Montant actuel :</strong> ${e.bid} <br>
+          <strong>Enchérisseur :</strong> ${e.bidder_id || "Aucun"}</p>
+
+          <input type="number" min="${e.bid + 1}" placeholder="Votre offre" id="bid-${e.id}">
+          <button onclick="encherir(${e.id})">Enchérir</button>
+          <button onclick="cloturer(${e.id})">Clôturer</button>
+        `;
+
+        container.appendChild(enchereDiv);
+      });
+    }
+
+    // Placer une enchère
+    async function encherir(id) {
+      const montant = document.getElementById(`bid-${id}`).value;
+      if (!montant) return alert("Veuillez saisir un montant");
+
+      const res = await fetch("http://localhost:3000/encherir", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          token,
+          enchere_id: id,
+          montant: parseInt(montant)
+        })
+      });
+
+      const json = await res.json();
+      alert(json.message);
+      chargerEncheres();
+    }
+
+    // Clôturer une enchère
+    async function cloturer(id) {
+      if (!confirm("Êtes-vous sûr de vouloir clôturer cette enchère ?")) return;
+
+      const res = await fetch("http://localhost:3000/cloturer", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          token,
+          enchere_id: id
+        })
+      });
+
+      const json = await res.json();
+      alert(json.message);
+      chargerEncheres();
+    }
+
+    chargerEncheres();
+  </script>
+</body>
+</html>

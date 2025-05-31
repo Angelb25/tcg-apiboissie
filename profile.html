@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mon Profil Pokémon</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #fff8e1, #ffd54f);
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+    .logo {
+      width: 200px;
+      margin-bottom: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    table {
+      margin: 20px auto;
+      border-collapse: collapse;
+      width: 80%;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    }
+    th, td {
+      padding: 12px 20px;
+      border-bottom: 1px solid #ccc;
+    }
+    th {
+      background-color: #ffc107;
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+  </style>
+</head>
+<body>
+
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pokémon_logo.svg/320px-International_Pokémon_logo.svg.png" class="logo" alt="Logo Pokémon">
+
+  <h1>👤 Mon Profil Pokémon</h1>
+
+  <div id="userInfo">Chargement...</div>
+
+  <script>
+    async function fetchUserInfo() {
+      const params = new URLSearchParams(window.location.search);
+      const token = params.get("token");
+      const userInfoDiv = document.getElementById("userInfo");
+
+      if (!token) {
+        userInfoDiv.textContent = "❌ Aucun token fourni dans l'URL.";
+        return;
+      }
+
+      try {
+        const res = await fetch(`http://localhost:3000/user?token=${encodeURIComponent(token)}`);
+        const result = await res.json();
+
+        if (!res.ok) {
+          userInfoDiv.textContent = "❌ " + result.message;
+          return;
+        }
+
+        const user = result.data;
+        const cards = user.collection;
+
+        userInfoDiv.innerHTML = `
+          <p><strong>Nom d'utilisateur :</strong> ${user.username}</p>
+          <h2>🃏 Collection de Cartes</h2>
+          <table>
+            <thead>
+              <tr><th>Nom</th><th>Rareté</th></tr>
+            </thead>
+            <tbody>
+              ${cards.map(card => `<tr><td>${card.name}</td><td>${card.rarity}</td></tr>`).join("")}
+            </tbody>
+          </table>
+        `;
+      } catch (err) {
+        userInfoDiv.textContent = "❌ Erreur lors de la récupération des données.";
+      }
+    }
+
+    fetchUserInfo();
+  </script>
+
+</body>
+</html>

@@ -1538,5 +1538,26 @@
         "rarity": "common"
       }
     ]
+  },
+  {
+    "id": 3,
+    "username": "tata",
+    "password": "tata",
+    "collection": [],
+    "token": null
+  },
+  {
+    "id": 4,
+    "username": "titi",
+    "password": "titi",
+    "collection": [],
+    "token": null
+  },
+  {
+    "id": 5,
+    "username": "tete",
+    "password": "tete",
+    "collection": [],
+    "token": null
   }
 ]

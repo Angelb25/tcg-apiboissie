@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Cartes Pokémon Disponibles</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #f5f5f5, #ffe082);
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+
+    .logo {
+      width: 200px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    table {
+      margin: auto;
+      border-collapse: collapse;
+      width: 90%;
+      max-width: 1000px;
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #ffca28;
+      color: #333;
+    }
+
+    tr:hover {
+      background-color: #fff8e1;
+    }
+  </style>
+</head>
+<body>
+
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pokémon_logo.svg/320px-International_Pokémon_logo.svg.png" class="logo" alt="Logo Pokémon">
+
+  <h1>📋 Cartes Pokémon Disponibles</h1>
+
+  <table id="cardsTable">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Rareté</th>
+        <th>Type</th>
+        <th>Attaque</th>
+        <th>Défense</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Les lignes seront injectées ici -->
+    </tbody>
+  </table>
+
+  <script>
+    async function fetchCards() {
+      try {
+        const res = await fetch("http://localhost:3000/cards");
+        const result = await res.json();
+
+        const tbody = document.querySelector("#cardsTable tbody");
+
+        if (!res.ok) {
+          tbody.innerHTML = `<tr><td colspan="5">❌ ${result.message}</td></tr>`;
+          return;
+        }
+
+        const cards = result.data;
+
+        if (!cards.length) {
+          tbody.innerHTML = `<tr><td colspan="5">Aucune carte disponible.</td></tr>`;
+          return;
+        }
+
+        tbody.innerHTML = cards.map(card => `
+          <tr>
+            <td>${card.name}</td>
+            <td>${card.rarity}</td>
+            <td>${card.type}</td>
+            <td>${card.attack}</td>
+            <td>${card.defense}</td>
+          </tr>
+        `).join("");
+
+      } catch (error) {
+        document.querySelector("#cardsTable tbody").innerHTML =
+          `<tr><td colspan="5">❌ Erreur lors du chargement des cartes.</td></tr>`;
+      }
+    }
+
+    fetchCards();
+  </script>
+
+</body>
+</html>
