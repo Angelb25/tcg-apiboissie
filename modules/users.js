@@ -1,45 +1,30 @@
 // Importation des modules nécessaires
 const fs = require("fs"); // Pour lire/écrire des fichiers
 const path = require("path"); // Pour gérer les chemins de fichiers
+const { Op } = require("sequelize");
+const User = require("../models/User");
 
 // Chemin vers le fichier contenant les utilisateurs
 const dataFilePath = path.join(__dirname, "../data/users.json");
 
-// Fonction pour enregistrer un nouvel utilisateur
-function RegisterUser(req, res) {
-    // Vérifie que le corps de la requête contient un nom d'utilisateur et un mot de passe
-    if (!req.body || !req.body.username || !req.body.password) {
-      return res.status(400).json({ message: "Erreur : Données manquantes", data: {} });
-    }
-  
-    const { username, password } = req.body;
-    // Lecture et parsing du fichier JSON contenant les utilisateurs
-    let users = JSON.parse(fs.readFileSync(dataFilePath));
-  
+// Fonction pour enregistrer un nouvel utilisateur (DB)
+async function RegisterUser(req, res) {
+  if (!req.body || !req.body.username || !req.body.password) {
+    return res.status(400).json({ message: "Erreur : Données manquantes", data: {} });
+  }
+  const { username, password } = req.body;
+  try {
     // Vérifie si l'utilisateur existe déjà
-    if (users.find(u => u.username === username)) {
+    const existing = await User.findOne({ where: { username } });
+    if (existing) {
       return res.status(409).json({ message: "Erreur : Utilisateur déjà existant", data: {} });
     }
-  
-    // Génération d'un nouvel ID utilisateur
-    const newId = users.length ? users[users.length - 1].id + 1 : 1;
-
-    // Création de l'objet utilisateur
-    const newUser = {
-      id: newId,
-      username,
-      password,
-      collection: [],
-      token: null
-    };
-  
-    // Ajoute le nouvel utilisateur à la liste
-    users.push(newUser);
-    // Enregistre la liste mise à jour dans le fichier JSON
-    fs.writeFileSync(dataFilePath, JSON.stringify(users, null, 2));
-  
-    // Répond avec succès
-    res.json({ message: "Utilisateur créé avec succès", data: newUser });
+    // Création de l'utilisateur
+    const newUser = await User.create({ username, password });
+    res.json({ message: "Utilisateur créé avec succès", data: { id: newUser.id, username: newUser.username } });
+  } catch (err) {
+    res.status(500).json({ message: "Erreur serveur", data: {} });
+  }
 }
 
 // Fonction pour générer un token aléatoire (non utilisée dans le reste du code ici)
@@ -47,84 +32,62 @@ function generateToken(length = 16) {
     return Math.random().toString(36).substring(2, 2 + length);
 }
 
-// Fonction de connexion d'un utilisateur
-function Login(req, res) {
-    const { username, password } = req.body;
-
-    // Vérifie que le nom d'utilisateur et le mot de passe sont fournis
-    if (!username || !password) {
-        return res.status(400).json({ message: "Username ou mot de passe manquant", data: {} });
-    }
-
-    // Lecture du fichier contenant les utilisateurs
-    const users = JSON.parse(fs.readFileSync('data/users.json'));
-    
-    // Recherche d’un utilisateur correspondant aux identifiants
-    const user = users.find(u => u.username === username && u.password === password);
-
-    // Si aucun utilisateur trouvé
+// Fonction de connexion d'un utilisateur (DB)
+async function Login(req, res) {
+  const { username, password } = req.body;
+  if (!username || !password) {
+    return res.status(400).json({ message: "Username ou mot de passe manquant", data: {} });
+  }
+  try {
+    const user = await User.findOne({ where: { username, password } });
     if (!user) {
-        return res.status(401).json({ message: "Utilisateur introuvable", data: {} });
+      return res.status(401).json({ message: "Utilisateur introuvable", data: {} });
     }
-
-    // Génération d’un token 
+    // Génération d’un token
     const token = Math.random().toString(36).substring(2, 12).toUpperCase();
     user.token = token;
-
-    // Mise à jour du fichier avec le nouveau token
-    fs.writeFileSync('data/users.json', JSON.stringify(users, null, 2));
-
-    // Réponse avec le token
+    await user.save();
     res.json({ message: "Authentification réussie", data: { token } });
+  } catch (err) {
+    res.status(500).json({ message: "Erreur serveur", data: {} });
+  }
 }
 
-// Fonction pour obtenir les informations d’un utilisateur via un token
-function GetUser(req, res) {
-    const token = req.query.token;
-
-    // Vérifie que le token est présent
-    if (!token) {
-        return res.status(400).json({ message: "Erreur : Token manquant", data: {} });
-    }
-
-    // Lecture du fichier JSON
-    const users = JSON.parse(fs.readFileSync(dataFilePath));
-    // Recherche d’un utilisateur avec le token donné
-    const user = users.find(u => u.token === token);
-
-    // Si aucun utilisateur n’est trouvé
+// Fonction pour obtenir les informations d’un utilisateur via un token (DB)
+async function GetUser(req, res) {
+  const token = req.query.token;
+  if (!token) {
+    return res.status(400).json({ message: "Erreur : Token manquant", data: {} });
+  }
+  try {
+    const user = await User.findOne({ where: { token } });
     if (!user) {
-        return res.status(403).json({ message: "Erreur : Token invalide", data: {} });
+      return res.status(403).json({ message: "Erreur : Token invalide", data: {} });
     }
-
-    // Réponse avec les données de l’utilisateur
+    // TODO: Ajouter la collection si modèle Collection existe
     res.json({ message: "Utilisateur trouvé", data: user });
+  } catch (err) {
+    res.status(500).json({ message: "Erreur serveur", data: {} });
+  }
 }
 
-// Fonction de déconnexion d’un utilisateur
-function Disconnect(req, res) {
-    const token = req.body.token;
-
-    // Vérifie que le token est fourni
-    if (!token) {
-        return res.status(400).json({ message: "Erreur : Token manquant", data: {} });
-    }
-
-    // Lecture du fichier JSON
-    const users = JSON.parse(fs.readFileSync(dataFilePath));
-    // Recherche de l’utilisateur correspondant au token
-    const user = users.find(u => u.token === token);
-
-    // Si aucun utilisateur trouvé
+// Fonction de déconnexion d’un utilisateur (DB)
+async function Disconnect(req, res) {
+  const token = req.body.token;
+  if (!token) {
+    return res.status(400).json({ message: "Erreur : Token manquant", data: {} });
+  }
+  try {
+    const user = await User.findOne({ where: { token } });
     if (!user) {
-        return res.status(403).json({ message: "Erreur : Token invalide", data: {} });
+      return res.status(403).json({ message: "Erreur : Token invalide", data: {} });
     }
-
-    // Suppression du token 
     user.token = null;
-    fs.writeFileSync(dataFilePath, JSON.stringify(users, null, 2));
-
+    await user.save();
     res.json({ message: "Déconnexion réussie", data: {} });
+  } catch (err) {
+    res.status(500).json({ message: "Erreur serveur", data: {} });
+  }
 }
 
 // Exportation des fonctions 

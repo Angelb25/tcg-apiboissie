@@ -1536,6 +1536,31 @@
         "id": 2,
         "name": "Bellsprout",
         "rarity": "common"
+      },
+      {
+        "id": 28,
+        "name": "Jigglypuff",
+        "rarity": "rare"
+      },
+      {
+        "id": 36,
+        "name": "Scyther",
+        "rarity": "rare"
+      },
+      {
+        "id": 36,
+        "name": "Scyther",
+        "rarity": "rare"
+      },
+      {
+        "id": 33,
+        "name": "Onix",
+        "rarity": "rare"
+      },
+      {
+        "id": 43,
+        "name": "Zapdos",
+        "rarity": "legendary"
       }
     ]
   },
