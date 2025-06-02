@@ -1,15 +1,18 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../db");
 
+// Définition du modèle Collection 
 const Collection = sequelize.define("Collection", {
+  // Quantité de cartes possédées par l'utilisateur (par défaut 1)
   quantity: {
     type: DataTypes.INTEGER,
     defaultValue: 1,
     allowNull: false
   }
 }, {
+  // table dans la base de données
   tableName: "Collections"
 });
 
-// Associations (sera relié à User et Card plus tard dans models/index.js)
+// Exportation du modèle
 module.exports = Collection;

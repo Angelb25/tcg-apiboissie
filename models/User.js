@@ -3,26 +3,29 @@ const sequelize = require("../db"); // Ton instance Sequelize
 
 const User = sequelize.define("User", {
   username: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    unique: true
+    type: DataTypes.STRING,      // Type chaîne de caractères
+    allowNull: false,            // Champ requis (non nul)
+    unique: true                 // Doit être unique dans la base
   },
+
   password: {
-    type: DataTypes.STRING,
-    allowNull: false
+    type: DataTypes.STRING,      // Type chaîne (souvent hashé)
+    allowNull: false             // Champ requis
   },
+
   currency: {
-    type: DataTypes.INTEGER,
-    defaultValue: 0
+    type: DataTypes.INTEGER,     // Type entier
+    defaultValue: 0              // Valeur par défaut : 0
   }
 }, {
+  // Nom de la table dans la base de données
   tableName: "Users"
 });
 
-// Associations éventuelles (à activer si tu as un modèle Collection)
+// Définition des associations avec d'autres modèles
 User.associate = (models) => {
   User.hasMany(models.Collection);
 };
 
+// Export du modèle User 
 module.exports = User;
-
